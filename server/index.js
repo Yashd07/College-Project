@@ -4,6 +4,8 @@ import bodyParser from 'body-parser';
 import userRoutes from './routes/user.js';
 import ngoRoutes from './routes/ngo.js'; 
 import ngoEventRoutes from './routes/event.js';
+import adminRoutes from './routes/admin.js';
+import jobRoutes from './routes/jobs.js';
 import cors from 'cors';
 import 'dotenv/config';
 const app = express();
@@ -37,5 +39,7 @@ mongoose.connection.on('disconnected', () => {
 app.use('/api/users', userRoutes);
 app.use('/api/ngos', ngoRoutes); 
 app.use('/api/events', ngoEventRoutes);
+app.use('/api/admin', adminRoutes);
+app.use('/api/jobs', jobRoutes);
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
