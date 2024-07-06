@@ -3,6 +3,7 @@ import React,{useState} from 'react';
 import axios from 'axios';
 import { ScreenMode } from '../pages/SigninPage';
 import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -10,6 +11,7 @@ import { toast } from 'react-toastify';
 
 
 const SignupForm = ({ onSwitchMode }) => {
+  const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
     name: '',
@@ -25,9 +27,10 @@ const SignupForm = ({ onSwitchMode }) => {
   const onSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:3000/api/users/register', formData);
+      const res = await axios.post('http://localhost:3001/api/users/register', formData);
       toast.success('Registration successful!');
       console.log(res.data);
+      navigate("/dashboard");
     } catch (err) {
       console.error(err.response.data);
       toast.error(err.response.data.msg || 'Registration failed!');

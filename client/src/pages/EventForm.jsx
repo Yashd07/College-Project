@@ -46,7 +46,7 @@ const EventForm = () => {
         },
       };
 
-      const response = await fetch('http://localhost:3000/api/events', config);
+      const response = await fetch('http://localhost:3001/api/events', config);
 
       
 

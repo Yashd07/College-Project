@@ -37,5 +37,5 @@ mongoose.connection.on('disconnected', () => {
 app.use('/api/users', userRoutes);
 app.use('/api/ngos', ngoRoutes); 
 app.use('/api/events', ngoEventRoutes);
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
