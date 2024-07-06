@@ -2,6 +2,7 @@ import { Button, Container, TextField, Typography, Stack } from '@mui/material';
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { toast } from "react-toastify";
 
 const AddJob = () => {
   const navigate = useNavigate();
@@ -23,7 +24,8 @@ const AddJob = () => {
     e.preventDefault();
     try {
       await axios.post('http://localhost:3001/api/jobs/add', formData);
-      navigate('/admin/jobs');
+    //   navigate('/admin/jobs');
+    toast.success("Job Added!");
     } catch (err) {
       console.error(err.response.data);
     }
