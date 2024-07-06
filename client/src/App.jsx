@@ -14,6 +14,9 @@ import EventsList from "./pages/EventsList";
 import UserDash from "./pages/UserDash";
 import EventForm from "./pages/EventForm";
 import ProfileScreen from "./components/ProfileScreen";
+import AdminSignin from "./pages/AdminSignin";
+import AdminDashboard from "./pages/AdminDashboard";
+import JobsComponent from "./components/JobsComponent";
 
 function App() {
   return (
@@ -25,6 +28,10 @@ function App() {
         <Route path="/profile" element={<ProfileScreen />} />
         <Route path="/events" element={<EventsList />} />
         <Route path="/createEvent" element={<EventForm />} />
+        <Route path="/admin81017" element={<AdminSignin />} />
+        <Route path="/admindashboard" element={<AdminDashboard />} />
+        
+
       </Routes>
       <CssBaseline />
       <ToastContainer />

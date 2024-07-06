@@ -1,6 +1,6 @@
 // features/auth/authSlice.js
 import { createSlice } from "@reduxjs/toolkit";
-import { loginUser } from "./authActions";
+import { loginUser, fetchAdminDetails  } from "./authActions";
 
 // initialize userToken from local storage
 const userToken = localStorage.getItem("userToken")

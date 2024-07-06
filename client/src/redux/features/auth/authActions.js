@@ -14,3 +14,15 @@ export const loginUser = createAsyncThunk(
     }
   }
 );
+
+export const fetchAdminDetails = createAsyncThunk(
+  "fetchAdminDetails",
+  async () => {
+    try {
+      const { data } = await api.get("/admin/details");
+      return data;
+    } catch (e) {
+      return e;
+    }
+  }
+);
